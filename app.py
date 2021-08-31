@@ -9,6 +9,9 @@ def index():
     logging.info("Website Up and Running")
     return render_template("index.html")
 
+@app.route("/help")
+def helper():
+    return "Help.txt"
 @app.route("/<shopname>/<transaction>/<totalamount>/<lastsale>",methods=["POST"])
 def saleupdate(shopname,transaction,totalamount,lastsale):
     print(shopname+" "+transaction+" "+totalamount+" "+lastsale)
