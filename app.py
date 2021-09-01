@@ -11,8 +11,8 @@ def index():
 
 @app.route("/help")
 def helper():
-    return "Help.txt"
-    
+    return render_template("help.html")
+
 @app.route("/<shopname>/<transaction>/<totalamount>/<lastsale>",methods=["POST"])
 def saleupdate(shopname,transaction,totalamount,lastsale):
     print(shopname+" "+transaction+" "+totalamount+" "+lastsale)
